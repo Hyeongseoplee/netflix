@@ -12,14 +12,32 @@ export const moviesApi = {
     nowPlaying : () => api.get("movie/now_playing"),
     upComing : () => api.get("movie/upcoming"),
     popular : () => api.get("movie/popular"),
-    movieSearch : () => api.get('search/movie'), 
-    movieDetail : (id) => api.get(`movie/${id}`),
+    movieDetail : (id) => api.get(`movie/${id}`, {
+        params : {
+            append_to_response : "videos"
+        }
+    }
+    ),
+    movieSearch : (term) => {
+        api.get('search/movie', {
+            query : encodeURIComponent(term) 
+        })
+    }
 }
 
 export const tvApi = {
     popular : () => api.get("tv/popular"),
     topRated : () => api.get("tv/top_rated"),
     airingToday : () => api.get("tv/airing_today"),
-    tvSearch : () => api.get('search/tv'),
-    tvDetail : (id) => api.get(`tv/${id}`),
+    tvDetail : (id) => api.get(`tv/${id}`, {
+        params : {
+            append_to_response : "videos"
+        }
+    }
+    ),
+    tvSearch : (term) => {
+        api.get('search/tv', {
+            query : encodeURIComponent(term) 
+        })
+    }
 }
