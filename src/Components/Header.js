@@ -44,7 +44,6 @@ color: whitesmoke;
 export default withRouter(({location : { pathname }}) => {
     return (
         <NavBarHeader>
-        {console.log(pathname)}
         <NavBarLogo>SupFlix</NavBarLogo>
         <List>
             <Item current={pathname === "/"}>

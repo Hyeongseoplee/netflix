@@ -7,10 +7,11 @@
 - [] Search
 - [] Detail
 
-- [] Now playing (movie)
-- [] Upcoming (movie)
-- [] Top rated (TV)
-- [] Popular (TV, movie)
-- [] Airing today (TV)
-- [] TVshow detail (TV)
-- [] Movie detail (movie)
+- [x] Now playing (movie)
+- [x] Upcoming (movie)
+- [x] Top rated (TV)
+- [x] Popular (TV, movie)
+- [x] Airing today (TV)
+- [x] TVshow detail (TV)
+- [x] Movie detail (movie)
+- [x] Search (TV, movie)

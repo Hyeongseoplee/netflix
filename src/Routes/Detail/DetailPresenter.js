@@ -1,0 +1,1 @@
+export default () => "Look at this Detail!"
