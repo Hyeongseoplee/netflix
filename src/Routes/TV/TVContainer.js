@@ -2,7 +2,7 @@ import React from 'react';
 import TvPresenter from './TVPresenter';
 import { tvApi } from '../../api';
 
-export default class extends React.Component {
+export default class TVcontainer extends React.Component {
         state = {
             popular  : null,
             topRated : null,

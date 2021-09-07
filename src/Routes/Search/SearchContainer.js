@@ -2,7 +2,7 @@ import React from 'react';
 import SearchPresenter from './SearchPresenter';
 import { moviesApi, tvApi } from '../../api';
 
-export default class extends React.Component {
+export default class SearchContainer extends React.Component {
     state = {
         tvResult : null,
         movieResult : null,
@@ -24,7 +24,7 @@ export default class extends React.Component {
 
         try{
             const { data : { results : movieResult }} = await moviesApi.movieSearch(searchTerm);
-            const { data : { results : tvResult }} = await moviesApi.tvSearch(searchTerm);
+            const { data : { results : tvResult }} = await tvApi.tvSearch(searchTerm);
             this.setState({ 
                 movieResult,
                 tvResult,

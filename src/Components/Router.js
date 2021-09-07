@@ -6,7 +6,7 @@ import Detail from '../Routes/Detail/index';
 
 import Header from './Header';
 
-export default () => (
+const Routers = () => (
     <Router>
         <Header/>
         <>
@@ -21,3 +21,5 @@ export default () => (
         </>
     </Router>
 )
+
+export default Routers;
