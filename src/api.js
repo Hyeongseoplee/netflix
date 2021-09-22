@@ -12,7 +12,8 @@ export const moviesApi = {
     nowPlaying : () => api.get("movie/now_playing"),
     upComing : () => api.get("movie/upcoming"),
     popular : () => api.get("movie/popular"),
-    movieDetail : (id) => api.get(`movie/${id}`, {
+    movieDetail : (id) => 
+    api.get(`movie/${id}`, {
         params : {
             append_to_response : "videos"
         }
@@ -31,14 +32,15 @@ export const tvApi = {
     popular : () => api.get("tv/popular"),
     topRated : () => api.get("tv/top_rated"),
     airingToday : () => api.get("tv/airing_today"),
-    tvDetail : (id) => api.get(`tv/${id}`, {
+    tvDetail : (id) => 
+        api.get(`tv/${id}`, {
         params : {
             append_to_response : "videos"
         }
     }
     ),
     tvSearch : (term) => {
-        api.get('search/tv', {
+        return api.get('search/tv', {
             params : {
                 query : encodeURIComponent(term) 
             }

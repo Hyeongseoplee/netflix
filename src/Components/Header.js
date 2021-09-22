@@ -41,21 +41,19 @@ text-align:center;
 color: whitesmoke;
 `;
 
-export default withRouter(({location : { pathname }}) => {
-    return (
-        <NavBarHeader>
-        <NavBarLogo>SupFlix</NavBarLogo>
-        <List>
-            <Item current={pathname === "/"}>
-                <SLink to="/">Home</SLink>
-            </Item>
-            <Item current={pathname === "/search"}>
-                <SLink to="/search">Search</SLink>
-            </Item>
-            <Item current={pathname === "/tv"}>
-                <SLink to="/tv">TV</SLink>
-            </Item>
-        </List>
-    </NavBarHeader>
-    )
-})
+export default withRouter(({location : { pathname }}) => (
+    <NavBarHeader>
+    <NavBarLogo>SupFlix</NavBarLogo>
+    <List>
+        <Item current={pathname === "/"}>
+            <SLink to="/">Home</SLink>
+        </Item>
+        <Item current={pathname === "/search"}>
+            <SLink to="/search">Search</SLink>
+        </Item>
+        <Item current={pathname === "/tv"}>
+            <SLink to="/tv">TV</SLink>
+        </Item>
+    </List>
+</NavBarHeader>
+))
