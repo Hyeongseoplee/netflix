@@ -4,11 +4,61 @@ import styled from 'styled-components';
 import Section from '../../Components/Section';
 import PropTypes from 'prop-types';
 
+const Container = styled.div``;
 
-function SearchPresenter({tvResult, movieResult, searchTerm, loading, error}) {
-    
+const Form = styled.form`
+    width:100%;
+`;
+
+const Input = styled.input`
+    all : unset;
+    width:100%;
+    padding:10px;
+    font-size:24px;
+`;
+
+function SearchPresenter({movieResult, tvResult, searchTerm, loading, error, handleSubmit, updateTerm}) {
     return (
-        <h4>This is Search page.</h4>
+        <>
+            <Container>
+                <Form onSubmit={handleSubmit}>
+                    <Input 
+                        onChange={updateTerm} 
+                        type ="text" 
+                        defaultValue = {searchTerm}
+                        placeholder="Seach the movie and TV show .. ">
+                    </Input>
+                </Form>
+                {loading ? <Loader/> : (
+                    <>
+                        {movieResult && movieResult.length > 0 && 
+                            <Section title = "Moives">
+                            {movieResult.map((movie, key) => 
+                                <Poster 
+                                    key = {movie.id}
+                                    title = {movie.original_title}
+                                    year = {movie.release_date.substring(0,4)}
+                                    rating = {movie.vote_average}
+                                    imgURL = {movie.poster_path}
+                                    />)}
+                            </Section>}
+                        {tvResult && tvResult.length > 0 && 
+                            <Section title = "TV shows">
+                            {tvResult.map((tv, key) => 
+                                <Poster 
+                                    key = {tv.id}
+                                    title = {tv.original_name}
+                                    year = {tv.first_air_date && tv.first_air_date.substring(0,4)}
+                                    rating = {tv.vote_average}
+                                    imgURL = {tv.poster_path}
+                                    />)}
+                            </Section>}
+                        </>
+                    )
+                }
+            
+            </Container>
+        </>
     )
 }
 
