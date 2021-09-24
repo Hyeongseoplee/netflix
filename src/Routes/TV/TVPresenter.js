@@ -2,6 +2,8 @@ import Loader from '../../Components/Loader';
 import Poster from '../../Components/Poster';
 import styled from 'styled-components';
 import Section from '../../Components/Section';
+import PropTypes from 'prop-types';
+
 
 const Container = styled.div``;
 
@@ -53,6 +55,14 @@ function TVPresenter({popular, topRated, airingToday, loading, error}) {
         }
         </>
     )
+}
+
+TVPresenter.prototype = {
+    popular : PropTypes.array.isRequired,
+    topRated : PropTypes.array.isRequired, 
+    airingToday: PropTypes.array.isRequired, 
+    loading : PropTypes.bool.isRequired,
+    error : PropTypes.string.isRequired, 
 }
 
 export default TVPresenter;

@@ -2,6 +2,7 @@ import Loader from '../../Components/Loader';
 import Poster from '../../Components/Poster';
 import styled from 'styled-components';
 import Section from '../../Components/Section';
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
     padding:15px;
@@ -55,4 +56,12 @@ export default function HomePresenter({nowPlaying, upComing, popular, error, loa
         }
         </>
     )
+}
+
+HomePresenter.prototype = {
+    nowPlaying : PropTypes.array.isRequired,
+    upComing : PropTypes.array.isRequired, 
+    popular: PropTypes.array.isRequired, 
+    error : PropTypes.string.isRequired, 
+    loading : PropTypes.bool.isRequired,
 }
