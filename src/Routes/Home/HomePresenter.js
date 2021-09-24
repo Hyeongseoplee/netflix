@@ -3,7 +3,9 @@ import Poster from '../../Components/Poster';
 import styled from 'styled-components';
 import Section from '../../Components/Section';
 
-const Container = styled.div`padding:20px;`;
+const Container = styled.div`
+    padding:15px;
+`;
 
 export default function HomePresenter({nowPlaying, upComing, popular, error, loading}) {
     return (

@@ -13,6 +13,8 @@ const PosterImg = styled.img`
     background-position : center center;
     border-radius: 2px;
     z-index:100;
+    transition: all .2s ease-in-out;
+    cursor:pointer;
 `;
 
 const Rating = styled.div`
@@ -48,13 +50,18 @@ const Year = styled.div`
     font-size: 10px;
 `;
 
+const StarIcon = styled.div`
+    margin-right:5px;
+`;
+
 export default function Poster({title, year, rating, imgURL}) {
     return (
         <Container>
             <ImgContainer>
                 <PosterImg src={`https://image.tmdb.org/t/p/w300/${imgURL}`}/>
                 <Rating>
-                    <span role="img" aria-lavel="rating">🌟</span> {rating}/10</Rating>
+                    <StarIcon role="img" aria-label="rating">🌟</StarIcon>  
+                    {rating}/10</Rating>
             </ImgContainer>
             <Title>{title}</Title>
             <Year>{year}</Year>
