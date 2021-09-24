@@ -8,7 +8,7 @@ const Container = styled.div`
     padding:15px;
 `;
 
-export default function HomePresenter({nowPlaying, upComing, popular, error, loading}) {
+export default function HomePresenter({nowPlaying, upComing, popular, error, loading, isMovie}) {
     return (
         <>
         { loading ? <Loader/> : 
@@ -18,10 +18,12 @@ export default function HomePresenter({nowPlaying, upComing, popular, error, loa
                         {nowPlaying.map((movie, key) => 
                             <Poster
                                 key = {movie.id}
+                                id = {movie.id}
                                 title = {movie.original_title}
                                 year = {movie.release_date.substring(0,4)}
                                 rating = {movie.vote_average}
                                 imgURL = {movie.poster_path}
+                                isMovie = {true}
                             />
                             )}
                     </Section>
@@ -31,10 +33,12 @@ export default function HomePresenter({nowPlaying, upComing, popular, error, loa
                         {upComing.map((movie, key) => 
                             <Poster
                                 key = {movie.id}
+                                id = {movie.id}
                                 title = {movie.original_title}
                                 year = {movie.release_date.substring(0,4)}
                                 rating = {movie.vote_average}
                                 imgURL = {movie.poster_path}
+                                isMovie = {true}
                             />
                             )}
                     </Section>
@@ -44,10 +48,12 @@ export default function HomePresenter({nowPlaying, upComing, popular, error, loa
                         {popular.map((movie, key) => 
                             <Poster
                                 key = {movie.id}
+                                id = {movie.id}
                                 title = {movie.original_title}
                                 year = {movie.release_date.substring(0,4)}
                                 rating = {movie.vote_average}
                                 imgURL = {movie.poster_path}
+                                isMovie = {true}
                             />
                             )}
                     </Section>

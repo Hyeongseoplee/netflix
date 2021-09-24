@@ -14,39 +14,42 @@ function TVPresenter({popular, topRated, airingToday, loading, error}) {
             <Container>
                 {popular && popular.length > 0 && (
                     <Section title = "Popular">
-                        {popular.map((movie, key) => 
+                        {popular.map((tv, key) => 
                             <Poster
-                                key = {movie.id}
-                                title = {movie.original_name}
-                                year = {movie.first_air_date.substring(0,4)}
-                                rating = {movie.vote_average}
-                                imgURL = {movie.poster_path}
+                                key = {tv.id}
+                                id = {tv.id}
+                                title = {tv.original_name}
+                                year = {tv.first_air_date.substring(0,4)}
+                                rating = {tv.vote_average}
+                                imgURL = {tv.poster_path}
                             />
                             )}
                     </Section>
                 )}
                 {topRated && topRated.length > 0 && (
                     <Section title = "Top rated">
-                        {topRated.map((movie, key) => 
+                        {topRated.map((tv, key) => 
                             <Poster
-                                key = {movie.id}
-                                title = {movie.original_name}
-                                year = {movie.first_air_date.substring(0,4)}
-                                rating = {movie.vote_average}
-                                imgURL = {movie.poster_path}
+                                key = {tv.id}
+                                id = {tv.id}
+                                title = {tv.original_name}
+                                year = {tv.first_air_date.substring(0,4)}
+                                rating = {tv.vote_average}
+                                imgURL = {tv.poster_path}
                             />
                             )}
                     </Section>
                 )}
                 {airingToday && airingToday.length > 0 && (
                     <Section title = "Airing Today">
-                        {airingToday.map((movie, key) => 
+                        {airingToday.map((tv, key) => 
                             <Poster
-                                key = {movie.id}
-                                title = {movie.original_name}
-                                year = {movie.first_air_date.substring(0,4)}
-                                rating = {movie.vote_average}
-                                imgURL = {movie.poster_path}
+                                key = {tv.id}
+                                id = {tv.id}
+                                title = {tv.original_name}
+                                year = {tv.first_air_date.substring(0,4)}
+                                rating = {tv.vote_average}
+                                imgURL = {tv.poster_path}
                             />
                             )}
                     </Section>

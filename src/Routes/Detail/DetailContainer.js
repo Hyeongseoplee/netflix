@@ -6,7 +6,6 @@ class DetailContainer extends React.Component {
     constructor(props) {
         super(props);
         const { location : { pathname }} = this.props;
-        console.log(pathname);
 
         this.state = {
             result : null, // 들어오는 경로에 따라서 result애 들어오는 값도 바뀐다.
@@ -27,7 +26,6 @@ class DetailContainer extends React.Component {
         try {
             if( isMovie ){
                 result = await moviesApi.movieDetail(parsedId);
-
             }else{
                 result = await tvApi.tvDetail(parsedId);
             }
@@ -45,7 +43,6 @@ class DetailContainer extends React.Component {
 
     render() {
         const { result, loading, error} = this.state;
-        console.log(this.state);
         return (
             <DetailPresenter 
                 result={result} 

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -54,8 +55,9 @@ const StarIcon = styled.div`
     margin-right:5px;
 `;
 
-export default function Poster({title, year, rating, imgURL}) {
+export default function Poster({title, year, rating, imgURL, isMovie = false, id}) {
     return (
+        <Link to={isMovie ? `/movie/${id}` : `/tv/${id}`}>
         <Container>
             <ImgContainer>
                 <PosterImg src={`https://image.tmdb.org/t/p/w300/${imgURL}`}/>
@@ -66,5 +68,6 @@ export default function Poster({title, year, rating, imgURL}) {
             <Title>{title}</Title>
             <Year>{year}</Year>
         </Container>
+        </Link>
     )
 }

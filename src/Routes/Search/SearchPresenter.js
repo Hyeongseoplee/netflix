@@ -32,14 +32,16 @@ function SearchPresenter({movieResult, tvResult, searchTerm, loading, error, han
                 {loading ? <Loader/> : (
                     <>
                         {movieResult && movieResult.length > 0 && 
-                            <Section title = "Moives">
+                            <Section title = "Movies">
                             {movieResult.map((movie, key) => 
                                 <Poster 
                                     key = {movie.id}
+                                    id = {movie.id}
                                     title = {movie.original_title}
                                     year = {movie.release_date.substring(0,4)}
                                     rating = {movie.vote_average}
                                     imgURL = {movie.poster_path}
+                                    isMovie = {true}
                                     />)}
                             </Section>}
                         {tvResult && tvResult.length > 0 && 
@@ -47,6 +49,7 @@ function SearchPresenter({movieResult, tvResult, searchTerm, loading, error, han
                             {tvResult.map((tv, key) => 
                                 <Poster 
                                     key = {tv.id}
+                                    id = {tv.id}
                                     title = {tv.original_name}
                                     year = {tv.first_air_date && tv.first_air_date.substring(0,4)}
                                     rating = {tv.vote_average}

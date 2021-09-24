@@ -3,7 +3,6 @@ import Home from '../Routes/Home/index';
 import Search from '../Routes/Search/index';
 import TV from '../Routes/TV/index';
 import Detail from '../Routes/Detail/index';
-
 import Header from './Header';
 
 const Routers = () => (

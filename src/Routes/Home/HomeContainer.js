@@ -8,7 +8,7 @@ export default class HomeContainer extends React.Component{
         upComing : null,
         popular : null,
         error : null,
-        loading : true
+        loading : true,
     }
 
     async componentDidMount() {
@@ -41,7 +41,8 @@ export default class HomeContainer extends React.Component{
                 upComing={upComing} 
                 popular={popular} 
                 error={error} 
-                loading={loading}/>
+                loading={loading}
+                />
         )
     }
 }
