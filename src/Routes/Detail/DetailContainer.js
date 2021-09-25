@@ -47,7 +47,9 @@ class DetailContainer extends React.Component {
             <DetailPresenter 
                 result={result} 
                 loading={loading} 
-                error={error}/>
+                error={error}
+                props={this.props}
+                />
         )
     }
 }
