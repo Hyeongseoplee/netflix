@@ -1,4 +1,5 @@
-# Make a Netflix page!
+# Netflix
+: 원하는 영화와 tv, 드라마의 정보를 알 수 있음
 
 ## Screen
 
